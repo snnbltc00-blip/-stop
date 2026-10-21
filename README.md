@@ -1,2 +1,2 @@
-# -stop
+# istop
 İstop Mobil Oyun
