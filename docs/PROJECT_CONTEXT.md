@@ -5,18 +5,21 @@ Son güncelleme: 2026-11-05. Durum: koridor temizliği onaylandı ve tamamlandı
 Yerel depo: -stop; GitHub: snnbltc00-blip/-stop; dal: main.
 İncelenen başlangıç commit'i: fa1c247c66552452b2f4c5c3e4682341a5b3eb60.
 Başlangıçta yalnızca README.md ve index.html mevcut. README güncellendi, eksik beş belge oluşturuldu.
-index.html yaklaşık 332 satır / 44 KB; CSS, Klasik oyun durumu, çizim, girdi ve kayıt içerir. Kullanıcı koridor modunun ayrı Bang Match projesine ait olduğunu belirtti; o modun kodu kaldırıldı. Paket veya derleme sistemi yoktur.
+index.html tek dosya arayüz, animasyon ve oyun kodunu içerir; CSS, Klasik oyun durumu, çizim, girdi ve kayıt içerir. Kullanıcı koridor modunun ayrı Bang Match projesine ait olduğunu belirtti; o modun kodu kaldırıldı. Paket veya derleme sistemi yoktur.
 
 ## Hızlı kod haritası
 | Konu | index.html içindeki semboller |
 | --- | --- |
-| Ana menü ve giriş | MD, menuDown, startMode, down |
+| Ana menü ve giriş | menuUI2, updatePreview, finishVideoIntro, menuDown, startMode, down |
 | Klasik oyun | newGame, wait, announce, win, lose |
 | Güncelleme / çizim | upd, draw, loop, rs |
+| Basılma / oyun sonu | buttonAt, beginButton, endButton, drawLose, lbt |
 | Kayıt | S, sv2, saveProgress |
-| Ses / tema | snd, dk, sheetTap |
+| Ses / tema | snd, dk, sheetTap, tr, settingsIcon |
 
 Ana menü startMode üzerinden newGame çağırır. Koridor motoru, 100 seviye verisi, güçlendiriciler ve RENK EVRENİ alt başlıkları kaldırıldı. Ortak box/cheer ses yardımcıları ve Klasik özel topları korundu. Test kapsamı ROADMAP içinde kayıtlıdır.
+
+Açılış varlığı: assets/baltx-intro.mp4. Menü önizlemesi oyuncu kaydından bağımsızdır. Arayüz ayrıntıları GAME_DESIGN ve CHANGELOG içindedir. Dil S.lang alanında mevcut tercih anahtarıyla saklanır.
 
 ## Korunacak veri
 istop_classic_s, istop_classic_best, istop_classic_dk ve istop_classic_migrated anahtarları mevcut. Eski istop_s, istop_best ve istop_dk için taşıma kodu bulunur. Yeni veri şeması gerekirse sürümlü ve geriye uyumlu göç tasarlanır. Klasik kayıt tam oyun anı değil skor kaydıdır. Eski kayıtta bulunan diğer oyuna ait alanlar veri kaybını önlemek için pasif biçimde korunur; oyun bunları kullanmaz.

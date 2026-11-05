@@ -24,7 +24,7 @@ try {
  const checks=[],assert=(ok,name)=>{if(!ok)throw Error(name);checks.push(name)};
  const tap=(px,py)=>{const r=cv.getBoundingClientRect();down({clientX:px+r.left,clientY:py+r.top})};
  assert(best===321&&dk&&S.stock===2,'Eski kayıt göçü');
- draw();upd(4);draw();assert(st==='menu','Açılış → menü');
+ finishVideoIntro();draw();assert(st==='menu','Açılış → menü');
  const start=L().start;tap(start.x+10,start.y+10);draw();
  assert(st==='wait'&&score===0&&ist===5&&S.stock===0,'Menü → Klasik / stok');
  const hunt=()=>{newGame();st='hunt';tg=0;hl=5;balls=[{x:100,y:220,r:R,c:0,vx:1,vy:0},{x:180,y:220,r:R,c:1,vx:-1,vy:0}];};
@@ -37,11 +37,11 @@ try {
  window.lt0=-10000;const retry=lbt().a;tap(retry.x+10,retry.y+10);assert(st==='wait'&&score===0,'Tekrar oyna');
  hunt();hl=.01;upd(.02);draw();assert(st==='lose'&&lr==='Süre doldu!','Süre kaybı');
  hunt();tap(W-22,24);draw();assert(paused,'Duraklatma');
- const p=pRect();tap(p.x+30,p.y+85);assert(!paused&&st==='hunt','Devam et');
- tap(W-22,24);tap(p.x+30,p.y+145);draw();assert(st==='menu'&&!paused,'Ana menüye dön');
+ const p=pRect();tap(pauseActions().resume.x+10,pauseActions().resume.y+10);assert(!paused&&st==='hunt','Devam et');
+ tap(W-22,24);tap(pauseActions().home.x+10,pauseActions().home.y+10);draw();assert(st==='menu'&&!paused,'Ana menüye dön');
  const gear=L().gear;tap(gear.x+20,gear.y+20);draw();assert(sheet==='set','Ayarlar');
- const settings=sheetR(),oldDark=dk;tap(settings.x+40,settings.y+90);assert(dk!==oldDark,'Tema');
- const oldSound=S.snd;tap(settings.x+40,settings.y+145);assert(S.snd!==oldSound,'Ses');S.snd=0;
+ const settings=sheetR(),oldDark=dk;tap(settings.x+40,settings.y+150);assert(dk!==oldDark,'Tema');
+ const oldSound=S.snd;tap(settings.x+40,settings.y+95);assert(S.snd!==oldSound,'Ses');S.snd=0;
  sheet=null;hunt();usedIst=true;const oldIst=ist;startPink();pb=pbs[0];st='grow';gT=.01;upd(.02);draw();
  assert(st==='wait'&&score===1000&&ist===oldIst+1,'Pembe top / bonus / İstop geri kazanımı');
  for(let phaseIndex=1;phaseIndex<=4;phaseIndex++){pcnt=phaseIndex;phase();spawnR();spawnBlack();spawnW();upd(.02);draw();}

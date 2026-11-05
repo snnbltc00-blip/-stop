@@ -14,8 +14,11 @@ Depo kökündeki index.html dosyasını tarayıcıda açabilirsiniz. Yerel HTTP 
 - [Aşamalar ve kabul testleri](docs/ROADMAP.md)
 - [Değişiklik geçmişi](docs/CHANGELOG.md)
 
-## GitHub Pages hedefi
-Onay sonrası main dalının kökünden statik yayın doğrulanacak. Derleme veya npm zorunluluğu planlanmıyor. Pages ayarları ve canlı yayın bu aşamada doğrulanmadı. Depo adı -stop iken beklenen yol /-stop/, istop olursa /istop/ olacaktır; ad değişikliği sonrası yollar ve çevrimdışı önbellek yeniden test edilmelidir.
+## GitHub Pages
+Mevcut oyun adresi korunur: [İstop'u aç](https://snnbltc00-blip.github.io/-stop/). Depo adı ve yayın yolu değiştirilmez.
+
+## Güncel arayüz
+3 saniyelik açılış videosu, canlı top animasyonlu tek modlu menü, TR/ENG, sessiz/koyu mod ve basılma efektleri bulunur. Video için `assets/baltx-intro.mp4` dosyası index.html yanında korunmalıdır. Ayrıntılar değişiklik geçmişindedir.
 
 ## Regresyon testi
 Yerel HTTP sunucusunda [Klasik regresyon testini](tests/classic-regression.html) açın. Test, gerçek oyuncu kaydını kullanmadan ayrı iframe belleğinde 20 kontrol çalıştırır. `?width=360&height=640` parametreleriyle oyun ekranının boyutu değiştirilebilir.

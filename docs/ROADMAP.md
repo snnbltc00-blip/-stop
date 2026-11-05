@@ -27,3 +27,6 @@ Saf kurallar ayrılınca zaman, skor, kayıt dönüşümü ve durum geçişlerin
 
 ## Bu aşamanın doğrulama sınırı
 Chrome headless üzerinde tests/classic-regression.html ile 20 otomatik kontrol çalıştırıldı: kayıt göçü, giriş/menü, tur, skor, İstop, kayıp, tekrar oynama, duraklatma, tema/ses ayarları ve özel toplar. Aynı kontroller değişiklik öncesi sürümde de geçti; yeni sürüm 390×844, 360×640 ve 844×390 boyutlarında doğrulandı. Testler sabit rastgelelik ve elle ilerletilen zamanla oyun fonksiyonlarını gerçek Canvas ortamında çağırır; fiziksel dokunma, işitsel kalite veya uzun süreli oynanış testi değildir. Gerçek iOS/Android, çevrimdışı ve Pages yayın kontrolleri henüz yapılmadı.
+
+## Arayüz teslimi — 5 Kasım 2026
+Kullanıcı onaylı arayüz ve animasyon güncellemeleri tamamlandı. Chrome üzerinde TR/ENG, 320×568, 390×844, 844×390 ve masaüstü görünümü; oyun akışı; renk/patlama döngüsü; fare/dokunma, basılı tutma ve sürükleme iptali doğrulandı. Ses simgesi ve AudioContext askıya alma çağrıları kontrol edildi; fiziksel cihazda işitsel kalite ayrıca denenmelidir. Yeni görünüm için test koordinatları güncellendi. Pages üzerinde kullanıcı kabul testi bekleniyor; genel modülerleşme ve çevrimdışı plan hâlâ onay bekler.

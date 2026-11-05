@@ -3,6 +3,8 @@
 ## Kapsam ve onay
 Kullanıcı 5 Kasım 2026 tarihinde Bang Match/koridor kodunun, Klasik işleyiş korunarak kaldırılmasını onayladı. Bu temizlik tamamlandı. Genel modülerleşme ve çevrimdışı uygulama planı ayrıca onay bekliyor. GitHub'a belge yükleme talebi kod uygulama onayı sayılmaz.
 
+Bu sohbetin kapsamı arayüz ve animasyondur. Her değişiklikten sonra güncel index.html kullanıcıya paylaşılır. MD ve GitHub işlemleri kullanıcı onayına bağlıdır. Kullanıcının “güncellemeleri yap” talebi, tamamlanan değişikliklerin ilgili MD belgelerine işlenmesi ve mevcut GitHub Pages adresi korunarak GitHub'a yüklenmesi için onaydır. Depo adı ve Pages yayın yolu değiştirilmez.
+
 ## Az bağlamla güvenli çalışma
 1. Önce git durumunu ve docs/PROJECT_CONTEXT.md dosyasını oku; ardından yalnızca görevle ilgili belgeyi ve kod bölümünü aç.
 2. Dosya keşfi için rg --files, sembol bulmak için rg -n kullan. Büyük dosyaları baştan sona tekrar tekrar okuma; ilgili satır aralığını oku.

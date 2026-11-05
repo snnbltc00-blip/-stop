@@ -1,5 +1,15 @@
 # Değişiklik geçmişi
 
+## 2026-11-05 — Arayüz ve animasyon güncellemeleri
+- Yerel 3 saniyelik BALTX videosu sessiz otomatik açılışa eklendi; bitince ana menü açılır.
+- Tek modlu menü, rekor, küçük renk değiştiren başlat düğmesi ve bağımsız top animasyonu oluşturuldu. Her 3 saniyede hedef renk değişir; eş renkli toplar sırayla patlar, son topta tur patlama efekti çıkar.
+- Ayarlar ve oyun sonu kutuları sade mor temaya uyarlandı; yuvarlak dişli simgeleri ve tüm butonlara basılma efekti eklendi.
+- Yeşil/sağ sessiz anahtarı sesi kapatır, notayı çizer; koyu modda hilal yıldızları parlar.
+- TR/ENG seçimi yalnız ana menüde bulunur, tüm oyun metinlerini çevirir; mevcut tercih kaydında lang alanı kullanılır.
+- Skor beyaz yıldızla, tur simgesiz gösterilir. Kalan top yazısı kaldırıldı. İSTOP son duyurulan renkte kalır; pembe top rengi değiştirmez.
+- Menü butonları bırakılınca çalışır; İSTOP anlık tepki verir. Sürükleme/iptal durumları ele alındı.
+- Yerel Chrome tarayıcı testlerinde oyun akışı, dil, kayıt hataları, efekt izolasyonu, fare/dokunma ve ekran boyutları doğrulandı. Fiziksel iOS/Android ve çevrimdışı kullanım doğrulanmadı.
+
 ## 2026-11-05 — Bang Match kodunun ayrılması
 - Kullanıcı onayıyla 100 seviyelik koridor motoru, seviye ekranları, elektrik/buz/volkan güçlendiricileri ve ilgili girdi/çizim dalları kaldırıldı.
 - RENK EVRENİ alt başlıkları temizlendi; Klasik kurallar, özel toplar ve ortak ses yardımcıları korundu.
