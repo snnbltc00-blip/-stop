@@ -1,7 +1,7 @@
 # İstop — geliştirme kuralları
 
 ## Kapsam ve onay
-Bu aşama yalnızca dokümantasyon ve planlamadır. Kullanıcı planı onaylamadan oyun kodunu, bağımlılıkları veya mimariyi değiştirme. GitHub'a belge yükleme talebi kod uygulama onayı sayılmaz.
+Kullanıcı 5 Kasım 2026 tarihinde Bang Match/koridor kodunun, Klasik işleyiş korunarak kaldırılmasını onayladı. Bu temizlik tamamlandı. Genel modülerleşme ve çevrimdışı uygulama planı ayrıca onay bekliyor. GitHub'a belge yükleme talebi kod uygulama onayı sayılmaz.
 
 ## Az bağlamla güvenli çalışma
 1. Önce git durumunu ve docs/PROJECT_CONTEXT.md dosyasını oku; ardından yalnızca görevle ilgili belgeyi ve kod bölümünü aç.

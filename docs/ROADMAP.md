@@ -1,5 +1,5 @@
 # Geliştirme aşamaları
-Durum: yalnızca Aşama 0 yapıldı; uygulama kullanıcı plan onayını bekler.
+Durum: Aşama 0 ve ayrıca onaylanan Bang Match temizliği tamamlandı. Aşama 1 için otomatik Klasik regresyon referansı oluşturuldu; kapsamlı cihaz kontrolleri sürüyor. Modülerleşme/çevrimdışı uygulama onay bekler.
 
 | Aşama | Teslim | Bitiş ölçütü |
 | --- | --- | --- |
@@ -8,7 +8,7 @@ Durum: yalnızca Aşama 0 yapıldı; uygulama kullanıcı plan onayını bekler.
 | 2 — Kademeli ayırma | CSS, kayıt/ses servisleri; ardından döngü, girdi, Klasik ve çizim | Her küçük taşımadan sonra aynı davranış; eski kayıtlar korunmuş |
 | 3 — Mobil / çevrimdışı | Yerel varlıklar, service worker, mobil düzeltmeler | Soğuk çevrimdışı yeniden açılış ve sürüm geçişi başarılı |
 | 4 — İlk prototip doğrulaması | GitHub Pages ve cihaz testi | Aşağıdaki kabul listesi geçti; sonuçlar belgelendi |
-| 5 — Sonraki özellikler | Koridor modunun erişimi, erişilebilirlik, içerik/denge | Ayrı kapsam ve kullanıcı önceliği belirlenmiş |
+| 5 — Sonraki özellikler | Erişilebilirlik, Klasik içerik/denge | Ayrı kapsam ve kullanıcı önceliği belirlenmiş |
 
 ## Kabul ve regresyon listesi
 - Açılış, menü, Klasik başlatma, doğru/yanlış top, süre dolması, tur geçişi, tekrar oynama.
@@ -21,9 +21,9 @@ Durum: yalnızca Aşama 0 yapıldı; uygulama kullanıcı plan onayını bekler.
 - Ön yükleme tamamlandıktan sonra ağ kapalıyken sekmeyi kapatıp yeniden açma; fontlar ve oyun çalışmalı.
 - Yeni service worker sürümüne geçiş; yarım indirme, eski önbellek, kayıtların korunması.
 - Pages proje alt yolunda tüm dosyalar 200; hatalı kök yolları ve konsol hataları yok.
-- Mevcut koridor kodu ve seviye verileri silinmemiş; ilgili dosya değişirse seviye başlangıcı, bitişi ve güçlendiriciler ayrıca test edilmiş.
+- Koridor/Bang Match sistemleri çıkarılmış; Klasik özel toplar, ortak ses yardımcıları ve kayıt anahtarları korunmuş.
 
 Saf kurallar ayrılınca zaman, skor, kayıt dönüşümü ve durum geçişlerine küçük bağımlılıksız testler eklenir. Canvas/pointer, ses, çevrimdışı ve görsel davranış tarayıcıda doğrulanır. Her aşamada yalnızca ilgili testler çalıştırılır.
 
 ## Bu aşamanın doğrulama sınırı
-Oyun tarayıcıda çalıştırılmadı; oynanış testleri geçti iddiası yoktur. Bu belge tesliminde dosya varlığı, Markdown yerel bağlantıları, diff temizliği ve index.html dosyasının değişmemesi kontrol edilir.
+Chrome headless üzerinde tests/classic-regression.html ile 20 otomatik kontrol çalıştırıldı: kayıt göçü, giriş/menü, tur, skor, İstop, kayıp, tekrar oynama, duraklatma, tema/ses ayarları ve özel toplar. Aynı kontroller değişiklik öncesi sürümde de geçti; yeni sürüm 390×844, 360×640 ve 844×390 boyutlarında doğrulandı. Testler sabit rastgelelik ve elle ilerletilen zamanla oyun fonksiyonlarını gerçek Canvas ortamında çağırır; fiziksel dokunma, işitsel kalite veya uzun süreli oynanış testi değildir. Gerçek iOS/Android, çevrimdışı ve Pages yayın kontrolleri henüz yapılmadı.

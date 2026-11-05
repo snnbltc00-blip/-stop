@@ -1,0 +1,55 @@
+<!doctype html><meta charset="utf-8"><title>İstop Klasik regresyon testleri</title>
+<p>Yerel HTTP sunucusuyla açın. Testler ayrı iframe belleğinde çalışır; oyuncu kaydına dokunmaz.</p>
+<pre id="result">Çalışıyor…</pre>
+<iframe id="game" style="width:390px;height:844px;border:0"></iframe>
+<script>
+(async()=>{
+const result=document.querySelector('#result'), frame=document.querySelector('#game');
+const params=new URLSearchParams(location.search);
+frame.style.width=(Number(params.get('width'))||390)+'px';frame.style.height=(Number(params.get('height'))||844)+'px';
+try {
+ const response=await fetch('../index.html');if(!response.ok)throw Error('Oyun yüklenemedi');
+ const html=await response.text();
+ const setup=`<script>
+ window.requestAnimationFrame=()=>0;
+ window.setTimeout=()=>0;
+ let seed=42;Math.random=()=>((seed=(seed*1664525+1013904223)>>>0)/4294967296);
+ const memory=new Map();Object.defineProperty(window,'localStorage',{value:{getItem:k=>memory.get(k)??null,setItem:(k,v)=>memory.set(k,String(v))}});
+ localStorage.setItem('istop_s',JSON.stringify({stock:2,snd:0,bestClassic:321,progress:{classic:{score:123},color:{score:456,level:8}}}));
+ localStorage.setItem('istop_best','321');localStorage.setItem('istop_dk','1');
+ <\/script>`;
+ const loaded=new Promise(resolve=>frame.onload=resolve);
+ frame.srcdoc=html.replace('<script>',setup+'<script>'); await loaded;
+ const checks=frame.contentWindow.eval(`(()=>{
+ const checks=[],assert=(ok,name)=>{if(!ok)throw Error(name);checks.push(name)};
+ const tap=(px,py)=>{const r=cv.getBoundingClientRect();down({clientX:px+r.left,clientY:py+r.top})};
+ assert(best===321&&dk&&S.stock===2,'Eski kayıt göçü');
+ draw();upd(4);draw();assert(st==='menu','Açılış → menü');
+ const start=L().start;tap(start.x+10,start.y+10);draw();
+ assert(st==='wait'&&score===0&&ist===5&&S.stock===0,'Menü → Klasik / stok');
+ const hunt=()=>{newGame();st='hunt';tg=0;hl=5;balls=[{x:100,y:220,r:R,c:0,vx:1,vy:0},{x:180,y:220,r:R,c:1,vx:-1,vy:0}];};
+ hunt();const b=btn();tap(b.x+10,b.y+10);assert(ist===2&&fz===3,'İstop hak ve dondurma');
+ upd(.1);assert(hl===5,'Donmuşken süre korunur');draw();
+ tap(100,220);draw();assert(st==='win'&&score===150,'Doğru renk / tur / skor');
+ assert(S.progress.classic.score===150&&best===321,'Puan kaydı / rekor');
+ upd(2);draw();assert(st==='wait'&&lvl===2,'Sonraki tur');
+ hunt();tap(180,220);draw();assert(st==='lose'&&lr==='Yanlış top!','Yanlış renk kaybı');
+ window.lt0=-10000;const retry=lbt().a;tap(retry.x+10,retry.y+10);assert(st==='wait'&&score===0,'Tekrar oyna');
+ hunt();hl=.01;upd(.02);draw();assert(st==='lose'&&lr==='Süre doldu!','Süre kaybı');
+ hunt();tap(W-22,24);draw();assert(paused,'Duraklatma');
+ const p=pRect();tap(p.x+30,p.y+85);assert(!paused&&st==='hunt','Devam et');
+ tap(W-22,24);tap(p.x+30,p.y+145);draw();assert(st==='menu'&&!paused,'Ana menüye dön');
+ const gear=L().gear;tap(gear.x+20,gear.y+20);draw();assert(sheet==='set','Ayarlar');
+ const settings=sheetR(),oldDark=dk;tap(settings.x+40,settings.y+90);assert(dk!==oldDark,'Tema');
+ const oldSound=S.snd;tap(settings.x+40,settings.y+145);assert(S.snd!==oldSound,'Ses');S.snd=0;
+ sheet=null;hunt();usedIst=true;const oldIst=ist;startPink();pb=pbs[0];st='grow';gT=.01;upd(.02);draw();
+ assert(st==='wait'&&score===1000&&ist===oldIst+1,'Pembe top / bonus / İstop geri kazanımı');
+ for(let phaseIndex=1;phaseIndex<=4;phaseIndex++){pcnt=phaseIndex;phase();spawnR();spawnBlack();spawnW();upd(.02);draw();}
+ assert(balls.some(b=>b.c===5)&&balls.some(b=>b.c===7)&&balls.some(b=>b.c===8),'Klasik özel toplar');
+ assert(S.progress.color.level===8,'Eski diğer oyun kaydı zarar görmedi');
+ return checks;
+})()`);
+ result.textContent=JSON.stringify({passed:checks.length,checks},null,2);
+}catch(e){result.textContent='FAIL: '+e.stack;}
+})();
+</script>
