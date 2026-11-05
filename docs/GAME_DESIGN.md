@@ -33,3 +33,5 @@ açılış → menü → oyun → kazanılan tur/kaybetme → tekrar oynama; İs
 
 ## Güncel arayüz
 Açılış videosundan sonra tek modlu menü gelir. Dil yalnız ana menü ayarlarından değiştirilir. Her iki ayar kutusunda sessiz/koyu mod vardır; yeşil sessiz anahtarı sesi kapatır. İSTOP kutusu son duyurulan hedef rengini bir sonraki duyuruya kadar korur; pembe top bunu değiştirmez. Kayıp ekranında puan, rekor, tekrar oynama ve menüye dönüş bulunur. Butonlar basıldığında küçülür ve iç gölge alır.
+
+Ana menü başlığı oyun içi İSTOP yazısıyla aynı font ailesini kullanır; açık temada mavi-mor, koyu temada açık lavanta mavisidir. Ses açıkken butona ilk basışta tek tok tıklama çalar; sessiz modda çalmaz.

@@ -10,12 +10,12 @@ index.html tek dosya arayüz, animasyon ve oyun kodunu içerir; CSS, Klasik oyun
 ## Hızlı kod haritası
 | Konu | index.html içindeki semboller |
 | --- | --- |
-| Ana menü ve giriş | menuUI2, updatePreview, finishVideoIntro, menuDown, startMode, down |
+| Ana menü ve giriş | menuLogo, menuUI2, updatePreview, finishVideoIntro, menuDown, startMode, down |
 | Klasik oyun | newGame, wait, announce, win, lose |
 | Güncelleme / çizim | upd, draw, loop, rs |
 | Basılma / oyun sonu | buttonAt, beginButton, endButton, drawLose, lbt |
 | Kayıt | S, sv2, saveProgress |
-| Ses / tema | snd, dk, sheetTap, tr, settingsIcon |
+| Ses / tema | buttonClick, snd, dk, sheetTap, tr, settingsIcon |
 
 Ana menü startMode üzerinden newGame çağırır. Koridor motoru, 100 seviye verisi, güçlendiriciler ve RENK EVRENİ alt başlıkları kaldırıldı. Ortak box/cheer ses yardımcıları ve Klasik özel topları korundu. Test kapsamı ROADMAP içinde kayıtlıdır.
 

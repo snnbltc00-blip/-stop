@@ -1,5 +1,11 @@
 # Değişiklik geçmişi
 
+## 2026-11-05 — Başlık ve buton sesi
+- Ana menü başlığı oyun içindeki İSTOP butonuyla aynı yazı tipine (Caveat Brush ve mevcut yedek fontlar) geçirildi. Açık temada mavi-mor, koyu temada açık lavanta mavisi dolgu ve belirgin kontur kullanılır; dolgu tek tondur.
+- Ses açıkken butona basıldığında kısa, tok tıklama sesi eklenir. Sessiz modda üretilmez; basılı tutma ve bırakma sesi tekrar tetiklemez.
+- Kullanılmayan Coiny font isteği kaldırıldı; kayıt anahtarları ve oyun kuralları değişmedi.
+- Chrome üzerinde font eşleşmesi, iki tema, gerçek AudioContext üretimi, sessiz mod ve fare/dokunma davranışı doğrulandı. Fiziksel cihazda sesin işitsel değerlendirmesi ayrıca yapılmalıdır.
+
 ## 2026-11-05 — Arayüz ve animasyon güncellemeleri
 - Yerel 3 saniyelik BALTX videosu sessiz otomatik açılışa eklendi; bitince ana menü açılır.
 - Tek modlu menü, rekor, küçük renk değiştiren başlat düğmesi ve bağımsız top animasyonu oluşturuldu. Her 3 saniyede hedef renk değişir; eş renkli toplar sırayla patlar, son topta tur patlama efekti çıkar.
